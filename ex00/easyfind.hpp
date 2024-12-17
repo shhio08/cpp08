@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <list>
+#include <vector>
 
 template <typename T>
 typename T::iterator easyfind(T &container, int value)

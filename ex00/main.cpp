@@ -27,7 +27,8 @@ int main()
 		std::list<int>::iterator it2 = easyfind(lst, 30);
 		std::cout << "Found: " << *it2 << std::endl;
 
-        const std::vector<int> constVec(vec.begin(), vec.end());
+		// const vectorでテスト
+		const std::vector<int> constVec(vec.begin(), vec.end());
 
 		std::vector<int>::const_iterator it3 = easyfind(constVec, 3);
 		std::cout << "Found: " << *it3 << std::endl;
