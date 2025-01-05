@@ -17,6 +17,7 @@ int main() {
     mstack.push(0);
 
     // イテレータを使用して要素を反復処理
+    
     MutantStack<int, std::vector<int> >::iterator it = mstack.begin();
     MutantStack<int, std::vector<int> >::iterator ite = mstack.end();
 
@@ -24,6 +25,15 @@ int main() {
     while (it != ite) {
         std::cout << *it << std::endl;
         ++it;
+    }
+
+    // reverse_iterator を使用して要素を反復処理
+    std::cout << "Stack elements (reverse iteration):" << std::endl;
+    MutantStack<int, std::vector<int> >::reverse_iterator rit = mstack.rbegin();
+    MutantStack<int, std::vector<int> >::reverse_iterator rite = mstack.rend();
+    while (rit != rite) {
+        std::cout << *rit << std::endl;
+        ++rit;
     }
 
 
@@ -48,21 +58,44 @@ int main() {
         ++it;
     }
 
-    // 追加テスト3: 逆イテレータのテスト
-    std::cout << "\nTesting reverse iteration:" << std::endl;
-    MutantStack<int, std::vector<int> >::iterator rit = mstack.end();
-    while (rit != mstack.begin()) {
-        --rit;
-        std::cout << *rit << std::endl;
-    }
-
-    // 追加テスト4: 空のスタックのテスト
+    // 追加テスト3: 空のスタックのテスト
     std::cout << "\nTesting empty stack:" << std::endl;
     MutantStack<int, std::vector<int> > emptyStack;
     if (emptyStack.empty()) {
         std::cout << "Stack is empty." << std::endl;
     }
 
+
+    // ===== std::string型のテスト =====
+    std::cout << "\n---Testing MutantStack with std::string---" << std::endl;
+    MutantStack<std::string, std::deque<std::string> > stringStack;
+
+    // 要素を追加
+    stringStack.push("Hello");
+    stringStack.push("World");
+    stringStack.push("MutantStack");
+    stringStack.push("Test");
+
+    // 先頭要素の確認
+    std::cout << "Top element: " << stringStack.top() << std::endl; // 出力: Test
+
+    // 全要素を順番に出力
+    MutantStack<std::string, std::deque<std::string> >::iterator sit = stringStack.begin();
+    MutantStack<std::string, std::deque<std::string> >::iterator site = stringStack.end();
+    std::cout << "String stack elements:" << std::endl;
+    while (sit != site) {
+        std::cout << *sit << std::endl;
+        ++sit;
+    }
+
+    // 全要素を逆順に出力
+    std::cout << "String stack elements (reverse iteration):" << std::endl;
+    MutantStack<std::string, std::deque<std::string> >::reverse_iterator srit = stringStack.rbegin();
+    MutantStack<std::string, std::deque<std::string> >::reverse_iterator srite = stringStack.rend();
+    while (srit != srite) {
+        std::cout << *srit << std::endl;
+        ++srit;
+    }
 
     return 0;
 }
