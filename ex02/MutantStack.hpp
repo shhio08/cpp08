@@ -3,6 +3,7 @@
 #include <stack>
 #include <iostream>
 #include <iterator>
+#include <vector>
 
 
 //テンプレートクラスとして定義し、std::stackを継承する

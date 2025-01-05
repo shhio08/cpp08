@@ -26,5 +26,43 @@ int main() {
         ++it;
     }
 
+
+    // 追加テスト1: コピーコンストラクタのテスト
+    std::cout << "\nTesting copy constructor:" << std::endl;
+    MutantStack<int, std::vector<int> > copiedStack(mstack);
+    it = copiedStack.begin();
+    ite = copiedStack.end();
+    while (it != ite) {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+
+    // 追加テスト2: 代入演算子のテスト
+    std::cout << "\nTesting assignment operator:" << std::endl;
+    MutantStack<int, std::vector<int> > assignedStack;
+    assignedStack = mstack;
+    it = assignedStack.begin();
+    ite = assignedStack.end();
+    while (it != ite) {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+
+    // 追加テスト3: 逆イテレータのテスト
+    std::cout << "\nTesting reverse iteration:" << std::endl;
+    MutantStack<int, std::vector<int> >::iterator rit = mstack.end();
+    while (rit != mstack.begin()) {
+        --rit;
+        std::cout << *rit << std::endl;
+    }
+
+    // 追加テスト4: 空のスタックのテスト
+    std::cout << "\nTesting empty stack:" << std::endl;
+    MutantStack<int, std::vector<int> > emptyStack;
+    if (emptyStack.empty()) {
+        std::cout << "Stack is empty." << std::endl;
+    }
+
+
     return 0;
 }

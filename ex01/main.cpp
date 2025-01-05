@@ -1,32 +1,6 @@
 #include "Span.hpp"
 
 int main() {
-    // try {
-    //     // 単一の数を追加するテスト
-    //     Span sp = Span(5);
-    //     sp.addNumber(6);
-    //     sp.addNumber(3);
-    //     sp.addNumber(17);
-    //     sp.addNumber(9);
-    //     sp.addNumber(11);
-
-    //     std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl; // 出力: 2
-    //     std::cout << "Longest Span: " << sp.longestSpan() << std::endl;  // 出力: 14
-
-    //     // イテレータで複数の数を追加するテスト
-    //     std::vector<int> vec;
-    //     for (int i = 0; i < 10000; ++i) {
-    //         vec.push_back(i * 2);
-    //     }
-    //     Span bigSpan(10000);
-    //     bigSpan.addNumber(vec.begin(), vec.end());
-    //     std::cout << "Shortest Span in bigSpan: " << bigSpan.shortestSpan() << std::endl;
-    //     std::cout << "Longest Span in bigSpan: " << bigSpan.longestSpan() << std::endl;
-    // }
-    // catch (const std::exception &e) {
-    //     std::cerr << "Error: " << e.what() << std::endl;
-    // }
-	    try {
         // テストケース1: 正常なケース
         Span sp(5);  // 最大5個の要素を格納できるSpan
         sp.addNumber(6);
@@ -96,10 +70,6 @@ int main() {
         } catch (const std::runtime_error &e) {
             std::cout << "Error: " << e.what() << std::endl;
         }
-
-    } catch (const std::exception &e) {
-        std::cout << "Unhandled exception: " << e.what() << std::endl;
-    }
 
     return 0;
 }
